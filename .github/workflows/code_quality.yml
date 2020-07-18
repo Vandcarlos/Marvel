@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - name: Force XCode 11.5
-        run: sudo xcode-select -switch /Applications/Xcode_11.5.app
+      - name: Force XCode 11.6
+        run: sudo xcode-select -switch /Applications/Xcode_11.6.app
       - name: Install pods
         run: Pod install
       - name: SwiftLint
