@@ -4,15 +4,6 @@ import UIKit.UIViewController
 
 class ListCharactersFromWebPresenter {
 
-    static func build(viewController: UIViewController) -> UIViewController {
-        let view = ListCharactersFromWebViewController()
-        let interactor = ListCharactersFromWebInteractor()
-
-        let router = ListCharactersFromWebRouter(viewController: viewController)
-        _ = ListCharactersFromWebPresenter(view: view, interactor: interactor, router: router)
-        return view
-    }
-
     private var view: ListCharactersFromWebViewToPresenter
     private var interactor: ListCharactersFromWebInteractorToPresenter
     private let router: ListCharactersFromWebRouterToPresenter

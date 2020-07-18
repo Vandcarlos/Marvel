@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
         let rootTabBarController = MUITabBarController()
 
         let tabs = [
-            ListCharactersFromWebPresenter.build(viewController: rootTabBarController)
+            createTabListCharacterFromWeb(viewController: rootTabBarController)
         ]
 
         rootTabBarController.viewControllers = tabs
@@ -23,6 +23,15 @@ class MainViewController: UIViewController {
 
         UIApplication.shared.windows.first?.rootViewController = rootNavigationController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+
+    private func createTabListCharacterFromWeb(viewController: UIViewController) -> UIViewController {
+        let view = ListCharactersFromWebViewController()
+        let interactor = ListCharactersFromWebInteractor()
+
+        let router = ListCharactersFromWebRouter(viewController: viewController)
+        _ = ListCharactersFromWebPresenter(view: view, interactor: interactor, router: router)
+        return view
     }
 
 }
