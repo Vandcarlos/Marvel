@@ -32,9 +32,6 @@ class ListCharactersFromWebPresenter {
         self.view = view
         self.interactor = interactor
         self.router = router
-
-        self.view.presenter = self
-        self.interactor.presenter = self
     }
 
     private func fetchCharacters() {

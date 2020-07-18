@@ -6,8 +6,6 @@ import UIKit.UIViewController
 
 protocol ListCharactersFromWebViewToPresenter: UIViewController {
 
-    var presenter: ListCharactersFromWebPresenterToView! { get set }
-
     var query: String { get }
 
     func reloadCharcters()
@@ -18,7 +16,7 @@ protocol ListCharactersFromWebViewToPresenter: UIViewController {
 
 }
 
-protocol ListCharactersFromWebPresenterToView {
+protocol ListCharactersFromWebPresenterToView: AnyObject {
 
     var currentCharacters: [Character] { get }
     var numberOfRows: Int { get }
@@ -41,8 +39,6 @@ protocol ListCharactersFromWebPresenterToView {
 // MARK: Interactor
 
 protocol ListCharactersFromWebInteractorToPresenter {
-
-    var presenter: ListCharactersFromWebPresenterToInteractor! { get set }
 
     func fetchCharacters(withQuery query: String, andPage page: Int)
     func checkCharactersFavoriteState(_ characters: [Character])

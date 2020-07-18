@@ -28,9 +28,12 @@ class MainViewController: UIViewController {
     private func createTabListCharacterFromWeb(viewController: UIViewController) -> UIViewController {
         let view = ListCharactersFromWebViewController()
         let interactor = ListCharactersFromWebInteractor()
-
         let router = ListCharactersFromWebRouter(viewController: viewController)
-        _ = ListCharactersFromWebPresenter(view: view, interactor: interactor, router: router)
+        let presenter = ListCharactersFromWebPresenter(view: view, interactor: interactor, router: router)
+
+        view.presenter = presenter
+        interactor.presenter = presenter
+
         return view
     }
 

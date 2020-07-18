@@ -4,15 +4,43 @@ import MarvelUIKit
 
 class ListCharactersFromWebViewController: MUISearchViewController, ListCharactersFromWebViewToPresenter {
 
+    weak var presenter: ListCharactersFromWebPresenterToView?
+
     convenience init() {
         self.init(nibName: nil, bundle: nil)
         title = LocalizableString.list.message
         tabBarItem.image = MUIImageManager.menu.icon
     }
 
-    // MARK: View to presenter stubs
+    // MARK: - View
 
-    var presenter: ListCharactersFromWebPresenterToView!
+    lazy var currentView: ListCharactersFromWebView = {
+        let view = ListCharactersFromWebView()
+        view.collectionView.delegate = self
+        view.collectionView.dataSource = self
+        return view
+    }()
+
+    // MARK: Life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        contentView = currentView
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+        currentView.tryAgainButton.addTarget(self, action: #selector(tryAgainTapped), for: .touchUpInside)
+    }
+
+    // MARK: MUISearchViewController methods
+
+    override func didCurrentQueryChanged() {
+        presenter?.searchTapped()
+    }
+
+    // MARK: View to presenter stubs
 
     var query: String {
         currentQuery
@@ -30,14 +58,14 @@ class ListCharactersFromWebViewController: MUISearchViewController, ListCharacte
 
         let tryAgainActionTitle = LocalizableString.tryAgain.message
         let tryAgatinAction = UIAlertAction(title: tryAgainActionTitle, style: .default) { [weak self] _ in
-            self?.presenter.retryLoad()
+            self?.presenter?.retryLoad()
         }
         alert.addAction(tryAgatinAction)
 
         let cancelActionTitle = LocalizableString.cancel.message
 
         let cancelAction = UIAlertAction(title: cancelActionTitle, style: .cancel) { [weak self] _ in
-            self?.presenter.cancelWhenErrorTapped()
+            self?.presenter?.cancelWhenErrorTapped()
         }
 
         alert.addAction(cancelAction)
@@ -67,39 +95,11 @@ class ListCharactersFromWebViewController: MUISearchViewController, ListCharacte
         }
     }
 
-    // MARK: - View
-
-    lazy var currentView: ListCharactersFromWebView = {
-        let view = ListCharactersFromWebView()
-        view.collectionView.delegate = self
-        view.collectionView.dataSource = self
-        return view
-    }()
-
-    // MARK: Life cycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        contentView = currentView
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        presenter.viewWillAppear()
-        currentView.tryAgainButton.addTarget(self, action: #selector(tryAgainTapped), for: .touchUpInside)
-    }
-
-    // MARK: MUISearchViewController methods
-
-    override func didCurrentQueryChanged() {
-        presenter.searchTapped()
-    }
-
     // MARK: View Actions
 
     @objc private func tryAgainTapped() {
         currentView.tryAgainButton.isHidden = true
-        presenter.retryLoad()
+        presenter?.retryLoad()
     }
 
 }
@@ -107,7 +107,7 @@ class ListCharactersFromWebViewController: MUISearchViewController, ListCharacte
 extension ListCharactersFromWebViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        presenter.numberOfRows
+        presenter?.numberOfRows ?? 0
     }
 
     func collectionView(
@@ -120,6 +120,7 @@ extension ListCharactersFromWebViewController: UICollectionViewDataSource, UICol
         )
 
         guard let characterCollectionCell = cell as? MUICharacterCollectionCell else { return cell }
+        guard let presenter = self.presenter else { return cell }
 
         if indexPath.row < presenter.currentCharacters.count {
             let character = presenter.currentCharacters[indexPath.row]
@@ -140,7 +141,7 @@ extension ListCharactersFromWebViewController: UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.itemTapped(withIndex: indexPath.row)
+        presenter?.itemTapped(withIndex: indexPath.row)
     }
 
 }
@@ -148,7 +149,7 @@ extension ListCharactersFromWebViewController: UICollectionViewDataSource, UICol
 extension ListCharactersFromWebViewController: MUICharacterCollectionCellDelegate {
 
     func didToggleFavorite(tag: Int) {
-        presenter.favoriteButtonTapped(withIndex: tag)
+        presenter?.favoriteButtonTapped(withIndex: tag)
     }
 
 }

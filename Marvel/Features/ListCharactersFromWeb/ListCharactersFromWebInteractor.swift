@@ -4,7 +4,7 @@ import MarvelAPI
 
 class ListCharactersFromWebInteractor: ListCharactersFromWebInteractorToPresenter {
 
-    var presenter: ListCharactersFromWebPresenterToInteractor!
+    var presenter: ListCharactersFromWebPresenterToInteractor?
 
     private let charactersWorer = MAPICharactersWorker()
 
@@ -20,7 +20,7 @@ class ListCharactersFromWebInteractor: ListCharactersFromWebInteractorToPresente
             )
         }
 
-        presenter.didFechCharacters(characters, toQuery: query)
+        presenter?.didFechCharacters(characters, toQuery: query)
     }
 
     private func performErrorRequest(with mAPIError: MAPIError, toQuery query: String) {
@@ -30,7 +30,7 @@ class ListCharactersFromWebInteractor: ListCharactersFromWebInteractorToPresente
         default: localizableString = .errorGeneric
         }
 
-        presenter.didFailOnFechCharacters(withMessage: localizableString.message, toQuery: query)
+        presenter?.didFailOnFechCharacters(withMessage: localizableString.message, toQuery: query)
     }
 
     func fetchCharacters(withQuery query: String, andPage page: Int) {
@@ -56,7 +56,7 @@ class ListCharactersFromWebInteractor: ListCharactersFromWebInteractorToPresente
             )
         }
 
-        presenter.didCheckCharactersFavoriteState(checkedCharacters)
+        presenter?.didCheckCharactersFavoriteState(checkedCharacters)
     }
 
     func favoriteCharacter(_ character: Character) {
