@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configFrameworks() {
         MarvelUIKit.configure()
         MarvelAPI.configure(apiKeys: ApiKeys())
+        RealmDB.configure()
     }
 
     private func configWindow() {
@@ -28,5 +29,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()
     }
-}
 
+}

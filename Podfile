@@ -18,6 +18,8 @@ target 'Marvel' do
   internal_pods
   dev_pods
 
+  pod 'RealmSwift', '~> 5.2.0'
+
   target 'MarvelTests' do
     inherit! :search_paths
     # Pods for testing

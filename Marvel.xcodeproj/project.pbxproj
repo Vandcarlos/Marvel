@@ -15,6 +15,9 @@
 		A038AF5F24C32F9800CEE1E2 /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF5E24C32F9800CEE1E2 /* MarvelTests.swift */; };
 		A038AF6E24C3308F00CEE1E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF6D24C3308F00CEE1E2 /* MainViewController.swift */; };
 		A038AF7024C3325000CEE1E2 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF6F24C3325000CEE1E2 /* APIKeys.swift */; };
+		A038AF7724C334EC00CEE1E2 /* DBFetchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF7324C334EC00CEE1E2 /* DBFetchOptions.swift */; };
+		A038AF7824C334EC00CEE1E2 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF7424C334EC00CEE1E2 /* RealmDB.swift */; };
+		A038AF7924C334EC00CEE1E2 /* CharacterRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF7624C334EC00CEE1E2 /* CharacterRealm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,9 @@
 		A038AF6024C32F9800CEE1E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A038AF6D24C3308F00CEE1E2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A038AF6F24C3325000CEE1E2 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		A038AF7324C334EC00CEE1E2 /* DBFetchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBFetchOptions.swift; sourceTree = "<group>"; };
+		A038AF7424C334EC00CEE1E2 /* RealmDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
+		A038AF7624C334EC00CEE1E2 /* CharacterRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterRealm.swift; sourceTree = "<group>"; };
 		A6391EFD9E54E94A0C43DBE2 /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D120BC5398F53DD09F806FB3 /* Pods-MarvelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelTests/Pods-MarvelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DFA1068EE6764BFF0965E3 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 		A038AF4624C32F9600CEE1E2 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				A038AF7124C334EC00CEE1E2 /* Services */,
 				A038AF6B24C3308400CEE1E2 /* Features */,
 				A038AF6A24C3305300CEE1E2 /* Supporting Files */,
 			);
@@ -141,6 +148,32 @@
 				A038AF6D24C3308F00CEE1E2 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		A038AF7124C334EC00CEE1E2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A038AF7224C334EC00CEE1E2 /* RealmDB */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A038AF7224C334EC00CEE1E2 /* RealmDB */ = {
+			isa = PBXGroup;
+			children = (
+				A038AF7524C334EC00CEE1E2 /* Entities */,
+				A038AF7324C334EC00CEE1E2 /* DBFetchOptions.swift */,
+				A038AF7424C334EC00CEE1E2 /* RealmDB.swift */,
+			);
+			path = RealmDB;
+			sourceTree = "<group>";
+		};
+		A038AF7524C334EC00CEE1E2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A038AF7624C334EC00CEE1E2 /* CharacterRealm.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D3F6283942F810F1739954B5 /* Frameworks */ = {
@@ -219,7 +252,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
-				"pt-BR"
+				"pt-BR",
 			);
 			mainGroup = A038AF3B24C32F9600CEE1E2;
 			productRefGroup = A038AF4524C32F9600CEE1E2 /* Products */;
@@ -338,9 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A038AF7824C334EC00CEE1E2 /* RealmDB.swift in Sources */,
 				A038AF6E24C3308F00CEE1E2 /* MainViewController.swift in Sources */,
 				A038AF4824C32F9600CEE1E2 /* AppDelegate.swift in Sources */,
 				A038AF7024C3325000CEE1E2 /* APIKeys.swift in Sources */,
+				A038AF7724C334EC00CEE1E2 /* DBFetchOptions.swift in Sources */,
+				A038AF7924C334EC00CEE1E2 /* CharacterRealm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
