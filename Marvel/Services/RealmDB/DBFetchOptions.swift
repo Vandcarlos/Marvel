@@ -1,10 +1,4 @@
 //
-//  DBFetchOptions.swift
-//  Marvel
-//
-//  Created by Vandcarlos Mouzinho Sandes Junior on 11/07/20.
-//  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
-//
 
 struct DBFetchOptions {
 

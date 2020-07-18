@@ -1,10 +1,4 @@
 //
-//  Character.swift
-//  Marvel
-//
-//  Created by Vandcarlos Mouzinho Sandes Junior on 09/07/20.
-//  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
-//
 
 import UIKit.UIImage
 

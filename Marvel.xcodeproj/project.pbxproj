@@ -24,6 +24,12 @@
 		A038AF8824C3366600CEE1E2 /* FavoriteCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF8324C3366600CEE1E2 /* FavoriteCharacter.swift */; };
 		A038AF8924C3366600CEE1E2 /* LocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF8424C3366600CEE1E2 /* LocalizableStrings.swift */; };
 		A038AF8C24C3367300CEE1E2 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF8B24C3367300CEE1E2 /* Character.swift */; };
+		A038AF9724C336EC00CEE1E2 /* ListCharactersFromWebInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF8E24C336EC00CEE1E2 /* ListCharactersFromWebInteractor.swift */; };
+		A038AF9824C336EC00CEE1E2 /* ListCharactersFromWebRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF8F24C336EC00CEE1E2 /* ListCharactersFromWebRouter.swift */; };
+		A038AF9A24C336EC00CEE1E2 /* ListCharactersFromWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF9124C336EC00CEE1E2 /* ListCharactersFromWebView.swift */; };
+		A038AF9B24C336EC00CEE1E2 /* ListCharactersFromWebProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF9224C336EC00CEE1E2 /* ListCharactersFromWebProtocols.swift */; };
+		A038AF9C24C336EC00CEE1E2 /* ListCharactersFromWebPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF9324C336EC00CEE1E2 /* ListCharactersFromWebPresenter.swift */; };
+		A038AF9F24C336EC00CEE1E2 /* ListCharactersFromWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038AF9624C336EC00CEE1E2 /* ListCharactersFromWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,12 @@
 		A038AF8324C3366600CEE1E2 /* FavoriteCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCharacter.swift; sourceTree = "<group>"; };
 		A038AF8424C3366600CEE1E2 /* LocalizableStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableStrings.swift; sourceTree = "<group>"; };
 		A038AF8B24C3367300CEE1E2 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		A038AF8E24C336EC00CEE1E2 /* ListCharactersFromWebInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCharactersFromWebInteractor.swift; sourceTree = "<group>"; };
+		A038AF8F24C336EC00CEE1E2 /* ListCharactersFromWebRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCharactersFromWebRouter.swift; sourceTree = "<group>"; };
+		A038AF9124C336EC00CEE1E2 /* ListCharactersFromWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCharactersFromWebView.swift; sourceTree = "<group>"; };
+		A038AF9224C336EC00CEE1E2 /* ListCharactersFromWebProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCharactersFromWebProtocols.swift; sourceTree = "<group>"; };
+		A038AF9324C336EC00CEE1E2 /* ListCharactersFromWebPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCharactersFromWebPresenter.swift; sourceTree = "<group>"; };
+		A038AF9624C336EC00CEE1E2 /* ListCharactersFromWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCharactersFromWebViewController.swift; sourceTree = "<group>"; };
 		A6391EFD9E54E94A0C43DBE2 /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D120BC5398F53DD09F806FB3 /* Pods-MarvelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelTests/Pods-MarvelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DFA1068EE6764BFF0965E3 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				A038AF6C24C3308F00CEE1E2 /* Main */,
+				A038AF8D24C336EC00CEE1E2 /* ListCharactersFromWeb */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -208,6 +221,19 @@
 				A038AF8B24C3367300CEE1E2 /* Character.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A038AF8D24C336EC00CEE1E2 /* ListCharactersFromWeb */ = {
+			isa = PBXGroup;
+			children = (
+				A038AF8E24C336EC00CEE1E2 /* ListCharactersFromWebInteractor.swift */,
+				A038AF8F24C336EC00CEE1E2 /* ListCharactersFromWebRouter.swift */,
+				A038AF9124C336EC00CEE1E2 /* ListCharactersFromWebView.swift */,
+				A038AF9224C336EC00CEE1E2 /* ListCharactersFromWebProtocols.swift */,
+				A038AF9324C336EC00CEE1E2 /* ListCharactersFromWebPresenter.swift */,
+				A038AF9624C336EC00CEE1E2 /* ListCharactersFromWebViewController.swift */,
+			);
+			path = ListCharactersFromWeb;
 			sourceTree = "<group>";
 		};
 		D3F6283942F810F1739954B5 /* Frameworks */ = {
@@ -406,17 +432,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A038AF9824C336EC00CEE1E2 /* ListCharactersFromWebRouter.swift in Sources */,
 				A038AF7824C334EC00CEE1E2 /* RealmDB.swift in Sources */,
+				A038AF9B24C336EC00CEE1E2 /* ListCharactersFromWebProtocols.swift in Sources */,
+				A038AF9A24C336EC00CEE1E2 /* ListCharactersFromWebView.swift in Sources */,
 				A038AF8724C3366600CEE1E2 /* URL+.swift in Sources */,
 				A038AF6E24C3308F00CEE1E2 /* MainViewController.swift in Sources */,
 				A038AF8C24C3367300CEE1E2 /* Character.swift in Sources */,
 				A038AF4824C32F9600CEE1E2 /* AppDelegate.swift in Sources */,
+				A038AF9724C336EC00CEE1E2 /* ListCharactersFromWebInteractor.swift in Sources */,
 				A038AF7024C3325000CEE1E2 /* APIKeys.swift in Sources */,
 				A038AF8924C3366600CEE1E2 /* LocalizableStrings.swift in Sources */,
 				A038AF8824C3366600CEE1E2 /* FavoriteCharacter.swift in Sources */,
 				A038AF7724C334EC00CEE1E2 /* DBFetchOptions.swift in Sources */,
 				A038AF8624C3366600CEE1E2 /* CharacterThumbnailStore.swift in Sources */,
+				A038AF9F24C336EC00CEE1E2 /* ListCharactersFromWebViewController.swift in Sources */,
 				A038AF7924C334EC00CEE1E2 /* CharacterRealm.swift in Sources */,
+				A038AF9C24C336EC00CEE1E2 /* ListCharactersFromWebPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
