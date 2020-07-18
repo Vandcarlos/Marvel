@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
         let rootTabBarController = MUITabBarController()
 
         let tabs = [
-            createTabListCharacterFromWeb(viewController: rootTabBarController)
+            createTabListCharacterFromWeb(viewController: rootTabBarController),
+            createTabListFavoriteCharacters(viewController: rootTabBarController)
         ]
 
         rootTabBarController.viewControllers = tabs
@@ -30,6 +31,18 @@ class MainViewController: UIViewController {
         let interactor = ListCharactersFromWebInteractor()
         let router = ListCharactersFromWebRouter(viewController: viewController)
         let presenter = ListCharactersFromWebPresenter(view: view, interactor: interactor, router: router)
+
+        view.presenter = presenter
+        interactor.presenter = presenter
+
+        return view
+    }
+
+    private func createTabListFavoriteCharacters(viewController: UIViewController) -> UIViewController {
+        let view = ListFavoriteCharactersViewController()
+        let interactor = ListFavoriteCharactersInteractor()
+        let router = ListFavoriteCharactersRouter(viewController: viewController)
+        let presenter = ListFavoriteCharactersPresenter(view: view, interactor: interactor, router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

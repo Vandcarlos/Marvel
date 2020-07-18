@@ -38,6 +38,12 @@
 		A0CEDF7524C33BC9007A8432 /* DetailsCharacterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEDF6E24C33BC9007A8432 /* DetailsCharacterProtocols.swift */; };
 		A0CEDF7624C33BC9007A8432 /* DetailsCharacterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEDF6F24C33BC9007A8432 /* DetailsCharacterInteractor.swift */; };
 		A0CEDF7824C33D4F007A8432 /* DetailsCharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEDF7724C33D4F007A8432 /* DetailsCharacterTests.swift */; };
+		A0CEDF8124C33D9B007A8432 /* ListFavoriteCharactersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEDF7A24C33D9B007A8432 /* ListFavoriteCharactersInteractor.swift */; };
+		A0CEDF8224C33D9B007A8432 /* ListFavoriteCharactersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEDF7B24C33D9B007A8432 /* ListFavoriteCharactersRouter.swift */; };
+		A0CEDF8324C33D9B007A8432 /* ListFavoriteCharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEDF7C24C33D9B007A8432 /* ListFavoriteCharactersViewController.swift */; };
+		A0CEDF8424C33D9B007A8432 /* ListFavoriteCharactersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEDF7D24C33D9B007A8432 /* ListFavoriteCharactersPresenter.swift */; };
+		A0CEDF8524C33D9B007A8432 /* ListFavoriteCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEDF7E24C33D9B007A8432 /* ListFavoriteCharactersView.swift */; };
+		A0CEDF8624C33D9B007A8432 /* ListFavoriteCharactersProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEDF7F24C33D9B007A8432 /* ListFavoriteCharactersProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +93,12 @@
 		A0CEDF6E24C33BC9007A8432 /* DetailsCharacterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCharacterProtocols.swift; sourceTree = "<group>"; };
 		A0CEDF6F24C33BC9007A8432 /* DetailsCharacterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCharacterInteractor.swift; sourceTree = "<group>"; };
 		A0CEDF7724C33D4F007A8432 /* DetailsCharacterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCharacterTests.swift; sourceTree = "<group>"; };
+		A0CEDF7A24C33D9B007A8432 /* ListFavoriteCharactersInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFavoriteCharactersInteractor.swift; sourceTree = "<group>"; };
+		A0CEDF7B24C33D9B007A8432 /* ListFavoriteCharactersRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFavoriteCharactersRouter.swift; sourceTree = "<group>"; };
+		A0CEDF7C24C33D9B007A8432 /* ListFavoriteCharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFavoriteCharactersViewController.swift; sourceTree = "<group>"; };
+		A0CEDF7D24C33D9B007A8432 /* ListFavoriteCharactersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFavoriteCharactersPresenter.swift; sourceTree = "<group>"; };
+		A0CEDF7E24C33D9B007A8432 /* ListFavoriteCharactersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFavoriteCharactersView.swift; sourceTree = "<group>"; };
+		A0CEDF7F24C33D9B007A8432 /* ListFavoriteCharactersProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFavoriteCharactersProtocols.swift; sourceTree = "<group>"; };
 		A6391EFD9E54E94A0C43DBE2 /* Pods_MarvelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D120BC5398F53DD09F806FB3 /* Pods-MarvelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelTests/Pods-MarvelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DFA1068EE6764BFF0965E3 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +196,7 @@
 			children = (
 				A038AF6C24C3308F00CEE1E2 /* Main */,
 				A038AF8D24C336EC00CEE1E2 /* ListCharactersFromWeb */,
+				A0CEDF7924C33D9B007A8432 /* ListFavoriteCharacters */,
 				A0CEDF6824C33BC9007A8432 /* DetailsCharacter */,
 			);
 			path = Features;
@@ -266,6 +279,19 @@
 				A0CEDF6F24C33BC9007A8432 /* DetailsCharacterInteractor.swift */,
 			);
 			path = DetailsCharacter;
+			sourceTree = "<group>";
+		};
+		A0CEDF7924C33D9B007A8432 /* ListFavoriteCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				A0CEDF7A24C33D9B007A8432 /* ListFavoriteCharactersInteractor.swift */,
+				A0CEDF7B24C33D9B007A8432 /* ListFavoriteCharactersRouter.swift */,
+				A0CEDF7C24C33D9B007A8432 /* ListFavoriteCharactersViewController.swift */,
+				A0CEDF7D24C33D9B007A8432 /* ListFavoriteCharactersPresenter.swift */,
+				A0CEDF7E24C33D9B007A8432 /* ListFavoriteCharactersView.swift */,
+				A0CEDF7F24C33D9B007A8432 /* ListFavoriteCharactersProtocols.swift */,
+			);
+			path = ListFavoriteCharacters;
 			sourceTree = "<group>";
 		};
 		D3F6283942F810F1739954B5 /* Frameworks */ = {
@@ -472,12 +498,18 @@
 				A038AF8724C3366600CEE1E2 /* URL+.swift in Sources */,
 				A038AF6E24C3308F00CEE1E2 /* MainViewController.swift in Sources */,
 				A038AF8C24C3367300CEE1E2 /* Character.swift in Sources */,
+				A0CEDF8124C33D9B007A8432 /* ListFavoriteCharactersInteractor.swift in Sources */,
 				A0CEDF7024C33BC9007A8432 /* DetailsCharacterViewController.swift in Sources */,
+				A0CEDF8624C33D9B007A8432 /* ListFavoriteCharactersProtocols.swift in Sources */,
+				A0CEDF8424C33D9B007A8432 /* ListFavoriteCharactersPresenter.swift in Sources */,
 				A038AF4824C32F9600CEE1E2 /* AppDelegate.swift in Sources */,
+				A0CEDF8524C33D9B007A8432 /* ListFavoriteCharactersView.swift in Sources */,
 				A0CEDF7424C33BC9007A8432 /* DetailsCharacterPresenter.swift in Sources */,
+				A0CEDF8224C33D9B007A8432 /* ListFavoriteCharactersRouter.swift in Sources */,
 				A038AF9724C336EC00CEE1E2 /* ListCharactersFromWebInteractor.swift in Sources */,
 				A0CEDF7324C33BC9007A8432 /* DetailsCharacterRouter.swift in Sources */,
 				A038AF7024C3325000CEE1E2 /* APIKeys.swift in Sources */,
+				A0CEDF8324C33D9B007A8432 /* ListFavoriteCharactersViewController.swift in Sources */,
 				A0CEDF7224C33BC9007A8432 /* DetailsCharacterView.swift in Sources */,
 				A038AF8924C3366600CEE1E2 /* LocalizableStrings.swift in Sources */,
 				A038AF8824C3366600CEE1E2 /* FavoriteCharacter.swift in Sources */,
