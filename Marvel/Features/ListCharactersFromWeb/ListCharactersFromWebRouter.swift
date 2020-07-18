@@ -11,9 +11,21 @@ class ListCharactersFromWebRouter: ListCharactersFromWebRouterToPresenter {
     }
 
     func openDetailsOf(character: Character) {
-        let detailsVC = UIViewController()
+        let view = DetailsCharacterViewController()
+        let interactor = DetailsCharacterInteractor()
+        let router = DetailsCharacterRouter()
 
-        viewController.navigationController?.pushViewController(detailsVC, animated: true)
+        let presenter = DetailsCharacterPresenter(
+            character: character,
+            view: view,
+            interactor: interactor,
+            router: router
+        )
+
+        view.presenter = presenter
+        interactor.presenter = presenter
+
+        viewController.navigationController?.pushViewController(view, animated: true)
     }
 
 }
