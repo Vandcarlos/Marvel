@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Marvel
+
+  Created by Vandcarlos Mouzinho Sandes Junior on 10/07/20.
+  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
+*/
+
+"action.try_again" = "tentar novamente";
+"action.cancel" = "cancelar";
+
+"error.generic" = "Isso não deveria acontecer :(";
+"error.internet" = "Verifique sua internet";
+"error.on_fetch_characters" = "Problema ao carregar personagens";
+
+"not_has_characters_to_show" = "Não existem personagens para ser mostrado";
